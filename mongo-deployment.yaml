@@ -15,8 +15,9 @@ spec:
         app: mongodb
     spec:
       containers:
-        - name: mongodb
-          image: mongo
+        - image: mongo
+          imagePullPolicy: IfNotPresent
+          name: mongodb
           ports:
             - containerPort: 27017
           env:
@@ -31,6 +32,7 @@ spec:
                   name: mongodb-secret
                   key: mongo-root-password
 
+
 --- # starts a new yaml file
 
 apiVersion: v1
@@ -40,6 +42,7 @@ metadata:
 spec:
   selector:
     app: mongodb
+  # default type is ClusterIP which is an internal service
   ports:
     - protocol: TCP
       port: 27017
