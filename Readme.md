@@ -40,3 +40,11 @@ minikube service mongo-express-service
 To create a database following connections are done!:
 
 <img src="https://raw.githubusercontent.com/pooya-mohammadi/kubernetes-projects/master/images/mongo-connections.png" alt="mongo-connections">
+
+## NameSpace
+```
+https://stackoverflow.com/a/69221127/16445477``
+
+
+# References:
+1. https://www.youtube.com/watch?v=X48VuDVv0do&t=5610s

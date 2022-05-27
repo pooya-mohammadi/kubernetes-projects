@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: myapp-ingress
+spec:
+  rules:
+    - host: myapp.com # This is the name of the host. It should be valid.
+      http: # protocol is http it's not configured for a secure connection.
+        paths: # url paths will be here. Anything that comes after the / at the end of host name.
+          - backend:
+              serviceName: myapp-internal-service # this is the exact name that is used under the metadata section of Internal Service. Unless it won't match.
+              servicePort: 8080 # this port should the same as the target/port number.
